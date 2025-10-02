@@ -1,60 +1,154 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>근로복지공단 공공노동조합</title>
     <style>
-        body {
-            font-family: "맑은 고딕", sans-serif;
+        /* Reset */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Apple SD Gothic Neo', '맑은 고딕', sans-serif;
+            background: #f0f2f5;
             color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         header {
-            background-color: #003366;
-            color: white;
-            padding: 20px 0;
+            background-color: #1a237e;
+            color: #e8eaf6;
+            padding: 1.5rem 2rem;
             text-align: center;
+            box-shadow: 0 3px 7px rgba(0, 0, 30, 0.3);
         }
         header h1 {
-            margin: 0;
-            font-size: 2em;
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
         }
         header p {
-            margin: 5px 0 0;
-            font-size: 1.2em;
+            margin-top: 0.4rem;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #c5cae9;
         }
         nav {
-            background-color: #005599;
+            background-color: #303f9f;
             display: flex;
             justify-content: center;
+            gap: 2rem;
+            padding: 0.8rem 0;
+            box-shadow: inset 0 -3px 5px rgba(0, 0, 0, 0.2);
         }
         nav a {
-            display: block;
-            padding: 14px 20px;
+            color: #e8eaf6;
             text-decoration: none;
-            color: white;
             font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.4rem 1rem;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 4px;
         }
         nav a:hover {
-            background-color: #0077cc;
+            background-color: #7986cb;
+            color: #1a237e;
         }
         main {
-            padding: 40px;
+            flex: 1;
+            max-width: 900px;
+            margin: 3rem auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 3rem 4rem;
             text-align: center;
         }
         main h2 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            color: #1a237e;
+        }
+        main p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: #555;
         }
         footer {
-            background-color: #003366;
-            color: white;
+            background-color: #1a237e;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
+            padding: 1.4rem 2rem;
+            color: #c5cae9;
+            font-size: 0.9rem;
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+        /* 로그인 폼 스타일 */
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #f5f5f5;
+            padding: 2rem 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .login-container h3 {
+            text-align: center;
+            color: #1a237e;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        .login-container label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 0.6rem 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .login-container input[type="text"]:focus,
+        .login-container input[type="password"]:focus {
+            border-color: #303f9f;
+            outline: none;
+        }
+        .login-container button {
+            width: 100%;
+            background-color: #303f9f;
+            border: none;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 0.7rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-container button:hover {
+            background-color: #1a237e;
+        }
+        /* 반응형 */
+        @media (max-width: 600px) {
+            main {
+                margin: 2rem 1rem;
+                padding: 2rem 1.5rem;
+            }
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -63,20 +157,32 @@
         <h1>근로복지공단 공공노동조합</h1>
         <p>공공의 힘으로, 당당하게 행복하게</p>
     </header>
-
     <nav>
-        <a href="#">노동조합 소개</a>
+        <a href="#">소개</a>
         <a href="#">공지사항</a>
         <a href="#">자료실</a>
-        <a href="#">연락하기</a>
+        <a href="#">회원 로그인</a>
+        <a href="#">문의하기</a>
     </nav>
-
     <main>
-        <h2>환영합니다!</h2>
-        <p>근로복지공단 공공노동조합의 공식 홈페이지입니다.<br>
-        조합원과 함께 더 나은 권익과 행복을 만들어갑니다.</p>
-    </main>
+        <section>
+            <h2>환영합니다!</h2>
+            <p>근로복지공단 공공노동조합 공식 홈페이지에 오신 것을 환영합니다.<br>
+                함께 힘을 모아 권익을 신장하고 더 나은 근무환경을 만들어 갑니다.</p>
+        </section>
+        <section class="login-container" aria-label="회원 로그인">
+            <h3>회원 로그인</h3>
+            <form action="/login" method="post">
+                <label for="userid">아이디</label>
+                <input type="text" id="userid" name="userid" autocomplete="username" required />
 
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required />
+
+                <button type="submit">로그인</button>
+            </form>
+        </section>
+    </main>
     <footer>
         <p>© 2025 근로복지공단 공공노동조합 | 대표전화: 000-0000-0000 | 이메일: info@union.kr</p>
     </footer>
