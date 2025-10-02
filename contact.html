@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>문의하기 - 근로복지공단 공공노동조합</title>
+    <style>
+        body {
+            font-family: 'Apple SD Gothic Neo', '맑은 고딕', sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+        header, nav, footer {
+            background-color: #1a237e;
+            color: #e8eaf6;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        nav a {
+            color: #e8eaf6;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            background: white;
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2.5rem 3rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a237e;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        input, textarea {
+            padding: 0.6rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            font-size: 1rem;
+            resize: vertical;
+        }
+        input:focus, textarea:focus {
+            border-color: #303f9f;
+            outline: none;
+        }
+        button {
+            background-color: #303f9f;
+            border: none;
+            color: white;
+            font-weight: 700;
+            padding: 0.8rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #1a237e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>근로복지공단 공공노동조합</h1>
+    </header>
+    <nav>
+        <a href="introduce.html">소개</a>
+        <a href="notice.html">공지사항</a>
+        <a href="resources.html">자료실</a>
+        <a href="index.html">회원 로그인</a>
+        <a href="contact.html">문의하기</a>
+    </nav>
+    <main>
+        <h1>문의하기</h1>
+        <form action="/submitContact" method="post">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">문의 내용</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <button type="submit">전송하기</button>
+        </form>
+    </main>
+    <footer>
+        © 2025 근로복지공단 공공노동조합
+    </footer>
+</body>
+</html>
